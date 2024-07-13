@@ -49,3 +49,13 @@ p {
   }
 }
 
+.menuFlutuante {
+  [class^="bto-"]:not(.bto-fechar){
+    @include font("medium", 32px, $cor-principal);
+}
+  footer{
+    button {
+      @include font("black", 24px, $cor-white);
+    }
+  }
+}

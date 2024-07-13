@@ -57,6 +57,21 @@ p {
   font-size: 0.9em;
 }
 
+.menuFlutuante [class^=bto-]:not(.bto-fechar) {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.6em;
+  color: #ED145B;
+}
+.menuFlutuante footer button {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 1.2em;
+  color: #ffffff;
+}
+
 .container {
   max-width: 1137px;
 }
@@ -280,6 +295,8 @@ p {
   width: calc(100% - 20px);
 }
 #app #pausa .pausa-corpo .conteudo footer .bto-compartilhar {
+  transition: 0.25s;
+  background-color: #ED145B;
   height: auto;
   overflow: hidden;
   background-color: #ED145B;
@@ -289,8 +306,10 @@ p {
   border-radius: 6px;
   padding: 10px 0px;
   box-shadow: 0 3px 0px rgba(0, 0, 0, 0.25);
-  transition: 0.25s;
-  background-color: #ED145B;
+  width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 #app #pausa .pausa-corpo .conteudo footer .bto-compartilhar:hover {
   background-color: #DE7621;
@@ -343,6 +362,137 @@ p {
 @media (max-width: 730px) {
   #app #pausa {
     height: auto;
+  }
+}
+#app .menuFlutuante {
+  position: fixed;
+  top: 0px;
+  left: -457px;
+  width: 457px;
+  height: 100%;
+  box-shadow: 9px 0 0 rgba(0, 0, 0, 0.25);
+  background-color: #ffffff;
+  z-index: 100;
+  padding: 0 20px;
+  transition: 0.35s;
+}
+#app .menuFlutuante.ativo {
+  left: 0px;
+}
+#app .menuFlutuante .logo {
+  margin: auto;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+#app .menuFlutuante [class^=bto-]:not(.bto-fechar) {
+  width: 100%;
+  margin-top: 20px;
+  transition: 0.25s;
+  transform: scale(1);
+  transform-origin: center center;
+}
+#app .menuFlutuante [class^=bto-]:not(.bto-fechar):hover {
+  transform: scale(1.15);
+}
+#app .menuFlutuante [class^=bto-]:not(.bto-fechar):active {
+  transform: scale(0.9) !important;
+}
+#app .menuFlutuante [class^=bto-]:not(.bto-fechar):focus {
+  outline: none;
+  transform: scale(1.15);
+  opacity: 0.5;
+}
+#app .menuFlutuante header {
+  overflow: hidden;
+}
+#app .menuFlutuante header .bto-fechar {
+  padding: 20px;
+  float: right;
+  transition: 0.25s;
+  transform: scale(1);
+  transform-origin: center center;
+}
+#app .menuFlutuante header .bto-fechar:hover {
+  transform: scale(1.15);
+}
+#app .menuFlutuante header .bto-fechar:active {
+  transform: scale(0.9) !important;
+}
+#app .menuFlutuante header .bto-fechar:focus {
+  outline: none;
+  transform: scale(1.15);
+  opacity: 0.5;
+}
+#app .menuFlutuante header .bto-fechar img {
+  width: 20.15px;
+  height: 20.15px;
+}
+#app .menuFlutuante footer {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: calc(100% - 20px);
+}
+#app .menuFlutuante footer button {
+  transition: 0.25s;
+  background-color: #ED145B;
+  height: auto;
+  overflow: hidden;
+  background-color: #ED145B;
+  color: #ffffff;
+  display: block;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px 0px;
+  box-shadow: 0 3px 0px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+#app .menuFlutuante footer button:hover {
+  background-color: #DE7621;
+}
+#app .menuFlutuante footer button:active {
+  background-color: #b1460d;
+}
+#app .menuFlutuante footer button:focus {
+  outline: none;
+  background-color: #DE7621;
+  opacity: 0.5;
+}
+#app .wall {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 99;
+  animation-name: wall;
+  animation-duration: 1s;
+  left: 0px;
+  top: 0px;
+}
+#app .wall.sair {
+  animation-name: sair;
+  touch-action: none;
+  pointer-events: none;
+}
+@keyframes wall {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes sair {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 
