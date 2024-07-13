@@ -1,0 +1,63 @@
+// Configuração Padrão de SASS do projeto 
+$browser-context: 20px;
+
+@function em($pixels, $context: $browser-context) {
+    @return #{calc($pixels / $context)}em;
+}
+@mixin inativo() {
+    pointer-events: none;
+    touch-action: none;
+    user-select: none;
+}
+@mixin botao-ui() {
+  transition: 0.25s;
+  transform: scale(1);
+  transform-origin: center center;
+  
+  &:hover {
+    transform: scale(1.15);
+  }
+
+  &:active {
+    transform: scale(.9) !important;
+  }
+
+  &:focus {
+    outline: none;
+    transform: scale(1.15);
+    opacity: .5;
+  }
+}
+
+@mixin botao-padrao() {
+  transition: 0.25s;
+  background-color: $cor-principal;
+
+  &:hover {
+    background-color: $cor-principal-var1
+  }
+
+  &:active {
+    background-color: $cor-principal-var2;
+  }
+
+  &:focus {
+    outline: none;
+    background-color: $cor-principal-var1;
+    opacity: .5;
+  }
+}
+@mixin font($fweight, $fsize, $fcolor){
+  @include roboto($fweight);
+  font-size: em($fsize);
+  color: $fcolor;
+}
+.bto-reset {
+  background: none;
+  border: 0px none;
+}
+
+.inativo {
+  @include inativo();
+  opacity: 0.2
+}

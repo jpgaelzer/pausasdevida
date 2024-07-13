@@ -1,0 +1,77 @@
+@mixin roboto($tipo) {
+    $familia: "Roboto", sans-serif;
+    
+    @if ($tipo == "thin"){
+        font-family: $familia;
+        font-weight: 100;
+        font-style: normal;
+    }
+    @else if ($tipo == "light"){
+        font-family: $familia;
+        font-weight: 300;
+        font-style: normal;
+    }
+    @else if ($tipo == "regular"){
+        font-family: $familia;
+        font-weight: 400;
+        font-style: normal;
+    }
+    @else if ($tipo == "medium"){
+        font-family: $familia;
+        font-weight: 500;
+        font-style: normal;
+    }
+    @else if ($tipo == "semibold"){
+        font-family: $familia;
+        font-weight: 600;
+        font-style: normal;
+    }
+    @else if ($tipo == "bold"){
+        font-family: $familia;
+        font-weight: 700;
+        font-style: normal;
+    }
+    @else if ($tipo == "black"){
+        font-family: $familia;
+        font-weight: 900;
+        font-style: normal;
+    }
+    @else if ($tipo == "italic"){
+        font-family: $familia;
+        font-weight: 100;
+        font-style: italic;
+    }
+    @else if ($tipo == "light-italic"){
+        font-family: $familia;
+        font-weight: 300;
+        font-style: italic;
+    }
+    @else if ($tipo == "regular-italic"){
+        font-family: $familia;
+        font-weight: 400;
+        font-style: italic;
+    }
+    @else if ($tipo == "medium-italic"){
+        font-family: $familia;
+        font-weight: 500;
+        font-style: italic;
+    }
+    @else if ($tipo == "semibold-italic"){
+        font-family: $familia;
+        font-weight: 600;
+        font-style: italic;
+    } 
+    @else if ($tipo == "bold-italic"){
+        font-family: $familia;
+        font-weight: 700;
+        font-style: italic;
+    } 
+    @else if ($tipo == "black-italic"){
+        font-family: $familia;
+        font-weight: 900;
+        font-style: italic;
+    }
+  
+}
+
+

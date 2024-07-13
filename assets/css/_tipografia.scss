@@ -1,0 +1,51 @@
+/* Tipografia do Projeto */
+@import "roboto";
+
+
+p {
+    font-size: 1em;
+}
+
+
+#pausa {
+  nav.controles{
+      .data {
+          
+      }
+  }
+  .pausa-corpo {
+    .conteudo {
+        header {
+          .data {
+            @include roboto("black");
+            font-size: em(24px);  
+          }
+        }
+        footer {
+            .bto-compartilhar {
+                @include roboto("black");
+                font-size: em(24px);
+                
+            }
+        }
+    }
+}
+}
+
+#perfil {
+  h2
+  {
+    color: $cor-principal;
+    @include roboto("semibold");
+    font-size: em(24px);
+  }
+  p{
+    font-size: 1em;
+    max-width: 740px;
+    margin: auto;
+  }
+  .projeto p {
+    font-size: em(18px)
+  }
+}
+

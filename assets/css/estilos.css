@@ -1,0 +1,364 @@
+@charset "UTF-8";
+.bto-reset {
+  background: none;
+  border: 0px none;
+}
+
+.inativo {
+  pointer-events: none;
+  touch-action: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  opacity: 0.2;
+}
+
+/* Padrão Cromático */
+html, body {
+  height: 100%;
+}
+
+body {
+  font-size: 20px;
+  background: url(../img/Background.png) center center/cover fixed no-repeat;
+}
+
+/* Tipografia do Projeto */
+p {
+  font-size: 1em;
+}
+
+#pausa .pausa-corpo .conteudo header .data {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 1.2em;
+}
+#pausa .pausa-corpo .conteudo footer .bto-compartilhar {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 1.2em;
+}
+
+#perfil h2 {
+  color: #ED145B;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.2em;
+}
+#perfil p {
+  font-size: 1em;
+  max-width: 740px;
+  margin: auto;
+}
+#perfil .projeto p {
+  font-size: 0.9em;
+}
+
+.container {
+  max-width: 1137px;
+}
+
+#app nav.topo {
+  padding: 62px 20px;
+  position: relative;
+}
+#app nav.topo .bto-hamburger {
+  transition: 0.25s;
+  transform: scale(1);
+  transform-origin: center center;
+}
+#app nav.topo .bto-hamburger:hover {
+  transform: scale(1.15);
+}
+#app nav.topo .bto-hamburger:active {
+  transform: scale(0.9) !important;
+}
+#app nav.topo .bto-hamburger:focus {
+  outline: none;
+  transform: scale(1.15);
+  opacity: 0.5;
+}
+#app nav.topo .logo {
+  position: absolute;
+  top: 33px;
+  left: calc(50% - 49px);
+  transition: 0.25s;
+  transform: scale(1);
+  transform-origin: center center;
+}
+#app nav.topo .logo:hover {
+  transform: scale(1.15);
+}
+#app nav.topo .logo:active {
+  transform: scale(0.9) !important;
+}
+#app nav.topo .logo:focus {
+  outline: none;
+  transform: scale(1.15);
+  opacity: 0.5;
+}
+#app nav.topo .redes-sociais {
+  max-width: 139.15px;
+  height: auto;
+  float: right;
+  display: flex;
+  gap: 18px;
+}
+#app nav.topo .redes-sociais a {
+  transition: 0.25s;
+  transform: scale(1);
+  transform-origin: center center;
+}
+#app nav.topo .redes-sociais a:hover {
+  transform: scale(1.15);
+}
+#app nav.topo .redes-sociais a:active {
+  transform: scale(0.9) !important;
+}
+#app nav.topo .redes-sociais a:focus {
+  outline: none;
+  transform: scale(1.15);
+  opacity: 0.5;
+}
+#app #pausa {
+  max-width: 1137px;
+  height: 750px;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: #ffffff;
+  z-index: 5;
+  border-radius: 13px;
+  box-shadow: 0 7px 0 rgba(0, 0, 0, 0.25);
+  margin-bottom: 100px;
+  overflow: hidden;
+}
+#app #pausa .pausa-corpo {
+  height: 100%;
+}
+#app #pausa .pausa-corpo .imagem {
+  width: 52.7%;
+  height: 100%;
+  float: left;
+  position: relative;
+  background-color: #333;
+  display: flex; /* Ativa o flexbox */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  overflow: hidden; /* Esconde o excesso da imagem */
+}
+#app #pausa .pausa-corpo .imagem img {
+  max-width: 100%; /* Garante que a imagem não ultrapasse a largura da div */
+  max-height: 100%; /* Garante que a imagem não ultrapasse a altura da div */
+  -o-object-fit: contain;
+     object-fit: contain; /* Mantém a proporção da imagem e a escala para caber na div */
+}
+@media (max-width: 730px) {
+  #app #pausa .pausa-corpo .imagem img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+@media (max-width: 730px) {
+  #app #pausa .pausa-corpo .imagem {
+    float: unset;
+    width: 100%;
+    height: auto;
+  }
+  #app #pausa .pausa-corpo .imagem::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 40%;
+  }
+}
+#app #pausa .pausa-corpo .conteudo {
+  float: right;
+  height: 100%;
+  width: 47.3%;
+  position: relative;
+  padding: 10px;
+}
+#app #pausa .pausa-corpo .conteudo header nav.controles {
+  display: flex;
+  background-color: #ECECEC;
+  border-radius: 6px;
+  padding: 10px 20px;
+  box-shadow: inset 0 -3px 0 rgba(197, 197, 197, 0.25);
+}
+#app #pausa .pausa-corpo .conteudo header nav.controles .bto-esq, #app #pausa .pausa-corpo .conteudo header nav.controles .bto-dir {
+  transition: 0.25s;
+  transform: scale(1);
+  transform-origin: center center;
+}
+#app #pausa .pausa-corpo .conteudo header nav.controles .bto-esq:hover, #app #pausa .pausa-corpo .conteudo header nav.controles .bto-dir:hover {
+  transform: scale(1.15);
+}
+#app #pausa .pausa-corpo .conteudo header nav.controles .bto-esq:active, #app #pausa .pausa-corpo .conteudo header nav.controles .bto-dir:active {
+  transform: scale(0.9) !important;
+}
+#app #pausa .pausa-corpo .conteudo header nav.controles .bto-esq:focus, #app #pausa .pausa-corpo .conteudo header nav.controles .bto-dir:focus {
+  outline: none;
+  transform: scale(1.15);
+  opacity: 0.5;
+}
+#app #pausa .pausa-corpo .conteudo header nav.controles .bto-esq {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#app #pausa .pausa-corpo .conteudo header nav.controles .data {
+  color: #ED145B;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
+  border-bottom: 2px dotted #ED145B;
+  transition: 0.2s;
+}
+#app #pausa .pausa-corpo .conteudo header nav.controles .data:hover {
+  border-color: #ECECEC;
+}
+#app #pausa .pausa-corpo .conteudo header nav.controles .bto-dir {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#app #pausa .pausa-corpo .conteudo section {
+  height: calc(100% - 200px);
+  overflow: hidden;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+#app #pausa .pausa-corpo .conteudo section .aspas {
+  background: url(../img/aspas-in.svg) top left no-repeat, url(../img/aspas-out.svg) bottom right no-repeat;
+  padding: 40px 0px;
+}
+#app #pausa .pausa-corpo .conteudo section .aspas .frase {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 2em;
+  color: #ED145B;
+}
+#app #pausa .pausa-corpo .conteudo section .aspas .mensagem {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 1.2em;
+  color: #000000;
+}
+@media (max-width: 730px) {
+  #app #pausa .pausa-corpo .conteudo section {
+    display: block;
+    margin-top: 40px;
+  }
+}
+#app #pausa .pausa-corpo .conteudo footer {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 100%;
+  width: calc(100% - 20px);
+}
+#app #pausa .pausa-corpo .conteudo footer .bto-compartilhar {
+  height: auto;
+  overflow: hidden;
+  background-color: #ED145B;
+  color: #ffffff;
+  display: block;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px 0px;
+  box-shadow: 0 3px 0px rgba(0, 0, 0, 0.25);
+  transition: 0.25s;
+  background-color: #ED145B;
+}
+#app #pausa .pausa-corpo .conteudo footer .bto-compartilhar:hover {
+  background-color: #DE7621;
+}
+#app #pausa .pausa-corpo .conteudo footer .bto-compartilhar:active {
+  background-color: #b1460d;
+}
+#app #pausa .pausa-corpo .conteudo footer .bto-compartilhar:focus {
+  outline: none;
+  background-color: #DE7621;
+  opacity: 0.5;
+}
+#app #pausa .pausa-corpo .conteudo footer .assinatura {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 1.2em;
+  color: #000000;
+  margin-bottom: 60px;
+}
+#app #pausa .pausa-corpo .conteudo footer .assinatura span {
+  color: #ED145B;
+}
+@media (max-width: 730px) {
+  #app #pausa .pausa-corpo .conteudo footer {
+    position: relative;
+    bottom: unser;
+    right: unset;
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+@media (max-width: 730px) {
+  #app #pausa .pausa-corpo .conteudo {
+    float: none;
+    width: 100%;
+  }
+}
+@media (max-width: 730px) {
+  #app #pausa .pausa-corpo {
+    height: auto;
+  }
+}
+@media (max-width: 1200px) {
+  #app #pausa {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 730px) {
+  #app #pausa {
+    height: auto;
+  }
+}
+
+#perfil {
+  position: relative;
+  z-index: 10;
+  padding-top: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 100px;
+}
+#perfil .avatar {
+  border-radius: 100%;
+}
+#perfil .projeto {
+  max-width: 420px;
+  margin: auto;
+}/*# sourceMappingURL=estilos.css.map */

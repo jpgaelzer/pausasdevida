@@ -1,0 +1,36 @@
+{
+
+    "painelclicavel": [
+        {
+            "label": "Nome do botao",
+            "modal-title": "",
+            "modal-body": [
+              
+                {
+                    "tipo": "img",
+                    "alt":"",
+                    "src":"",
+                    "class":"",
+                    "id":""
+
+                },
+                {
+                    "tipo": "p",
+                    "text": [
+                        "Paragrafo 1",
+                        "Parágrafo 2"
+                    ]
+                },
+                {
+                    "tipo": "youtube"
+                },
+                {
+                    // E fazer varios outros. A ordem do que vai aparecer é na ordem dessa array. 
+                }
+            ]
+        }
+    ]
+
+}
+
+
