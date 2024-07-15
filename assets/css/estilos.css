@@ -22,13 +22,42 @@ body {
   font-size: 20px;
   background: url(../img/Background.png) center center/cover fixed no-repeat;
 }
+body.revelarBusca {
+  overflow: hidden;
+}
+body.revelarBusca .busca {
+  display: block !important;
+  animation-name: revelarBusca;
+  animation-duration: 0.5s;
+}
+@keyframes revelarBusca {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body.ocultarBusca .busca {
+  display: block;
+  animation-name: ocultarBusca;
+  animation-duration: 0.5s;
+}
+@keyframes ocultarBusca {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 
 /* Tipografia do Projeto */
 p {
   font-size: 1em;
 }
 
-#pausa .pausa-corpo .conteudo header .data {
+#pausa .pausa-corpo .conteudo header .bto-data, #pausa .pausa-corpo .conteudo header .bto-buscar-aleatoria {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
   font-style: normal;
@@ -70,6 +99,31 @@ p {
   font-style: normal;
   font-size: 1.2em;
   color: #ffffff;
+}
+
+.busca .form .grupo .bto-ir {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 1.8em;
+  color: #ffffff;
+}
+.busca .form .grupo input.termos, .busca .form .grupo input.date {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 3.2em;
+  color: #333333;
+}
+.busca .form .grupo select {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2.25em;
+  color: #ED145B;
+}
+.busca .form .grupo option {
+  font-size: 1.5rem !important;
 }
 
 .container {
@@ -227,13 +281,58 @@ p {
   transform: scale(1.15);
   opacity: 0.5;
 }
+#app #pausa .pausa-corpo .conteudo header nav.controles .bto-buscar-aleatoria {
+  transition: 0.25s;
+  background-color: #ED145B;
+  height: auto;
+  overflow: hidden;
+  background-color: #ED145B;
+  color: #ffffff;
+  display: block;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px 0px;
+  box-shadow: 0 3px 0px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+#app #pausa .pausa-corpo .conteudo header nav.controles .bto-buscar-aleatoria:hover {
+  background-color: #DE7621;
+}
+#app #pausa .pausa-corpo .conteudo header nav.controles .bto-buscar-aleatoria:active {
+  background-color: #b1460d;
+}
+#app #pausa .pausa-corpo .conteudo header nav.controles .bto-buscar-aleatoria:focus {
+  outline: none;
+  background-color: #DE7621;
+  opacity: 0.5;
+}
+#app #pausa .pausa-corpo .conteudo header nav.controles .bto-filtro {
+  transition: 0.25s;
+  transform: scale(1);
+  transform-origin: center center;
+  padding-left: 20px;
+}
+#app #pausa .pausa-corpo .conteudo header nav.controles .bto-filtro:hover {
+  transform: scale(1.15);
+}
+#app #pausa .pausa-corpo .conteudo header nav.controles .bto-filtro:active {
+  transform: scale(0.9) !important;
+}
+#app #pausa .pausa-corpo .conteudo header nav.controles .bto-filtro:focus {
+  outline: none;
+  transform: scale(1.15);
+  opacity: 0.5;
+}
 #app #pausa .pausa-corpo .conteudo header nav.controles .bto-esq {
   flex: 1;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-#app #pausa .pausa-corpo .conteudo header nav.controles .data {
+#app #pausa .pausa-corpo .conteudo header nav.controles .bto-data {
   color: #ED145B;
   display: flex;
   justify-content: flex-start;
@@ -245,7 +344,7 @@ p {
   border-bottom: 2px dotted #ED145B;
   transition: 0.2s;
 }
-#app #pausa .pausa-corpo .conteudo header nav.controles .data:hover {
+#app #pausa .pausa-corpo .conteudo header nav.controles .bto-data:hover {
   border-color: #ECECEC;
 }
 #app #pausa .pausa-corpo .conteudo header nav.controles .bto-dir {
@@ -478,6 +577,153 @@ p {
   animation-name: sair;
   touch-action: none;
   pointer-events: none;
+}
+#app .busca {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.96) 41%, rgba(255, 255, 255, 0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  z-index: 1000;
+  display: none;
+}
+#app .busca .bto-fechar {
+  transition: 0.25s;
+  transform: scale(1);
+  transform-origin: center center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+#app .busca .bto-fechar:hover {
+  transform: scale(1.15);
+}
+#app .busca .bto-fechar:active {
+  transform: scale(0.9) !important;
+}
+#app .busca .bto-fechar:focus {
+  outline: none;
+  transform: scale(1.15);
+  opacity: 0.5;
+}
+#app .busca .form {
+  height: 100%;
+  display: flex; /* Ativa o Flexbox */
+  flex-direction: column; /* Organiza os itens em coluna */
+  align-items: center; /* Alinha os itens ao centro horizontalmente */
+  justify-content: center; /* Alinha os itens ao centro verticalmente */
+  /* Outras propriedades de estilo que você desejar (largura, altura, etc.) */
+}
+#app .busca .form .grupo {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  height: 79px;
+  margin: 10px 20px;
+  padding: 0px 20px;
+  overflow: hidden;
+}
+#app .busca .form .grupo img.ico-lupa {
+  width: 94.98px;
+  height: auto;
+}
+@media (max-width: 700px) {
+  #app .busca .form .grupo img.ico-lupa {
+    margin: auto;
+  }
+}
+@media (max-width: 700px) {
+  #app .busca .form .grupo {
+    height: auto;
+  }
+}
+#app .busca .form .grupo .bto-ir {
+  transition: 0.25s;
+  background-color: #ED145B;
+  height: auto;
+  overflow: hidden;
+  background-color: #ED145B;
+  color: #ffffff;
+  display: block;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px 0px;
+  box-shadow: 0 3px 0px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  max-width: 184px;
+  width: 100%;
+  height: 79px;
+}
+#app .busca .form .grupo .bto-ir:hover {
+  background-color: #DE7621;
+}
+#app .busca .form .grupo .bto-ir:active {
+  background-color: #b1460d;
+}
+#app .busca .form .grupo .bto-ir:focus {
+  outline: none;
+  background-color: #DE7621;
+  opacity: 0.5;
+}
+@media (max-width: 700px) {
+  #app .busca .form .grupo .bto-ir {
+    width: 100%;
+    max-width: unset;
+  }
+}
+@media (max-width: 700px) {
+  #app .busca .form .grupo:nth-child(1) {
+    flex-direction: column;
+  }
+}
+#app .busca .form .grupo:nth-child(2) {
+  height: auto;
+}
+@media (max-width: 700px) {
+  #app .busca .form .grupo:nth-child(2) {
+    margin-top: 20px;
+  }
+}
+#app .busca .form .grupo input.termos, #app .busca .form .grupo input.date {
+  border: 0px none;
+  background: none;
+  text-align: left;
+  border-bottom: 3px solid #ED145B;
+  max-width: 508px;
+  width: 100%;
+}
+#app .busca .form .grupo input.date {
+  text-align: center;
+}
+#app .busca .form .grupo select {
+  padding: 10px;
+  border: 2px solid #ED145B;
+  background-color: white;
+  max-width: 306px;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+}
+#app .busca .form .grupo option {
+  background-color: #f0f0f0;
+  padding: 5px;
+}
+#app .busca .form .grupo input[type=checkbox] {
+  border: 3px solid #333;
+}
+#app .busca .form .grupo label {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+#app .busca .form .grupo input[type=checkbox]:checked {
+  border: 3px solid #ED145B;
+  background-color: #ED145B;
 }
 @keyframes wall {
   from {

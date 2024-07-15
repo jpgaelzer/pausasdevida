@@ -16,7 +16,7 @@ p {
   .pausa-corpo {
     .conteudo {
         header {
-          .data {
+          .bto-data, .bto-buscar-aleatoria {
             @include roboto("black");
             font-size: em(24px);  
           }
@@ -57,5 +57,24 @@ p {
     button {
       @include font("black", 24px, $cor-white);
     }
+  }
+}
+
+.busca {
+  .form {
+    .grupo {
+          .bto-ir {
+            @include font("black", 36px, $cor-white)
+          }
+          input.termos, input.date {
+            @include font("medium", 64px, #333333);
+        }
+        select {
+          @include font("medium", 45px, $cor-principal)
+        }
+        option {
+          font-size: 1.5rem !important;
+        }
+      }
   }
 }
