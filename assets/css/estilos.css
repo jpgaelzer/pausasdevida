@@ -175,6 +175,13 @@ p {
   float: right;
   display: flex;
   gap: 18px;
+  transition: 0.5s;
+}
+@media (max-width: 991px) {
+  #app nav.topo .redes-sociais {
+    transform: scale(0.8);
+    transform-origin: right;
+  }
 }
 #app nav.topo .redes-sociais a {
   transition: 0.25s;
@@ -474,6 +481,12 @@ p {
   z-index: 100;
   padding: 0 20px;
   transition: 0.35s;
+}
+@media (max-width: 991px) {
+  #app .menuFlutuante {
+    width: 100%;
+    left: -100%;
+  }
 }
 #app .menuFlutuante.ativo {
   left: 0px;
