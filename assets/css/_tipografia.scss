@@ -68,9 +68,15 @@ p {
           }
           input.termos, input.date {
             @include font("medium", 64px, #333333);
+            @media (max-width: 991px){
+              font-size: em(30px) !important;
+            }
         }
         select {
-          @include font("medium", 45px, $cor-principal)
+          @include font("medium", 45px, $cor-principal);
+          @media (max-width: 991px){
+            font-size: em(24px) !important;
+          }
         }
         option {
           font-size: 1.5rem !important;

@@ -115,12 +115,22 @@ p {
   font-size: 3.2em;
   color: #333333;
 }
+@media (max-width: 991px) {
+  .busca .form .grupo input.termos, .busca .form .grupo input.date {
+    font-size: 1.5em !important;
+  }
+}
 .busca .form .grupo select {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-style: normal;
   font-size: 2.25em;
   color: #ED145B;
+}
+@media (max-width: 991px) {
+  .busca .form .grupo select {
+    font-size: 1.2em !important;
+  }
 }
 .busca .form .grupo option {
   font-size: 1.5rem !important;
