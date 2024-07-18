@@ -206,6 +206,7 @@ body {
                             @include font("black", 24px, $cor-black)
                         }
                     }
+                    
                     @media (max-width: 730px){
                         display: block;
                         margin-top: 40px;
@@ -223,9 +224,30 @@ body {
                         @include botao-padrao() 
 
                     }
+                    .fonte-image {
+                        font-size: em(14px);
+                        text-transform: uppercase;
+                        padding: 10px;
+                        background-color: $cor-cinza;
+                        &::before {
+                            content: "Fonte: ";
+                            display: inline;
+                            font-weight: bold;
+                        }
+                        a {
+                            color: $cor-principal;
+                            text-decoration: none;
+                            font-weight: bold;
+                            &:hover {
+
+                                text-decoration: underline;
+                            }
+                            
+                        }
+                    }
                     .assinatura {
                         @include font("black", 24px, $cor-black);
-                        margin-bottom: 60px;
+                        margin-bottom: 20px;
                         span {
                             color: $cor-principal;
                         }

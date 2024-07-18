@@ -438,13 +438,32 @@ p {
   background-color: #DE7621;
   opacity: 0.5;
 }
+#app #pausa .pausa-corpo .conteudo footer .fonte-image {
+  font-size: 0.7em;
+  text-transform: uppercase;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+#app #pausa .pausa-corpo .conteudo footer .fonte-image::before {
+  content: "Fonte: ";
+  display: inline;
+  font-weight: bold;
+}
+#app #pausa .pausa-corpo .conteudo footer .fonte-image a {
+  color: #ED145B;
+  text-decoration: none;
+  font-weight: bold;
+}
+#app #pausa .pausa-corpo .conteudo footer .fonte-image a:hover {
+  text-decoration: underline;
+}
 #app #pausa .pausa-corpo .conteudo footer .assinatura {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
   font-style: normal;
   font-size: 1.2em;
   color: #000000;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 #app #pausa .pausa-corpo .conteudo footer .assinatura span {
   color: #ED145B;
